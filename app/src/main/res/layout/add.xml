@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:text="Thêm giao dịch"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupInOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/textAdd"
+        app:layout_constraintStart_toStartOf="@+id/textAdd"
+        app:layout_constraintTop_toBottomOf="@+id/textAdd">
+
+        <RadioButton
+            android:id="@+id/radBtnRevenue"
+            android:layout_width="88dp"
+            android:layout_height="wrap_content"
+            android:text="Thu"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/radBtnExpenditure"
+            android:layout_width="79dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:text="Chi"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/textAdd"
+            app:layout_constraintStart_toEndOf="@+id/radioGroupInOut"
+            tools:layout_editor_absoluteY="170dp" />
+    </RadioGroup>
+
+    <Spinner
+        android:id="@+id/spinnerCat"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="36dp"
+        android:contextClickable="false"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="@+id/radioGroupInOut"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textCat"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupInOut" />
+
+    <TextView
+        android:id="@+id/textCat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-50dp"
+        android:layout_marginTop="36dp"
+        android:text="Chủ đề"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/radioGroupInOut"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupInOut" />
+
+    <TextView
+        android:id="@+id/textAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:orientation="horizontal"
+        android:text="Số tiền"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/textCat"
+        app:layout_constraintTop_toBottomOf="@+id/textCat" />
+
+    <EditText
+        android:id="@+id/editTextNumberSigned"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:width="300dp"
+        android:ems="10"
+        android:hint="Enter your money"
+        android:inputType="numberSigned"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerCat"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textAmount"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCat" />
+
+    <TextView
+        android:id="@+id/txtDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="Ngày"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/textAmount"
+        app:layout_constraintTop_toBottomOf="@+id/textAmount" />
+
+    <TextView
+        android:id="@+id/txtNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="36dp"
+        android:text="Note"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/txtDate"
+        app:layout_constraintTop_toBottomOf="@+id/txtDate" />
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:focusable="false"
+        android:hint="Select Date"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNumberSigned"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/txtDate"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberSigned" />
+
+    <EditText
+        android:id="@+id/editTextNote"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="24dp"
+        android:width="300dp"
+        android:ems="10"
+        android:hint="Enter your note"
+        android:inputType="numberSigned"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextDate"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/txtNote"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="125dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="64dp"
+        android:backgroundTint="#9E9E9E"
+        android:text="ADD"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNote"
+        app:layout_constraintHorizontal_bias="0.379"
+        app:layout_constraintStart_toStartOf="@+id/txtNote"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNote" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
