@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Transaction
 import com.map.nguyen_ha_my.bt2.Model.Category
 
 @Dao
@@ -15,5 +16,8 @@ interface CategoryDAO {
     suspend fun insertCategories(categories: List<Category>)
 
     @Query("SELECT * FROM tblCategory")
+    @Transactional
     suspend fun getAllCategories(): List<Category>
 }
+
+annotation class Transactional

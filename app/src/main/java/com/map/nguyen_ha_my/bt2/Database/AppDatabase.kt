@@ -1,3 +1,4 @@
+package com.map.nguyen_ha_my.bt2.Database
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
@@ -35,17 +36,20 @@ abstract class AppDatabase : RoomDatabase() {
         private fun getDefaultCategories(): List<Category> {
             return listOf(
                 Category(name = "Lương", note = "Salary", inOut = true),
+                Category(name = "Chi tiêu hàng ngày", note = "Daily Spending", inOut = false),
+                Category(name = "Học phí", note = "Tuition", inOut = false),
                 Category(name = "Làm thêm", note = "Part-time", inOut = true),
                 Category(name = "Học bổng", note = "Scholarship", inOut = true),
                 Category(name = "Bố mẹ cho", note = "From Parent", inOut = true),
                 Category(name = "Quà tặng", note = "Gift", inOut = true),
-                Category(name = "Học phí", note = "tuition", inOut = false),
-                Category(name = "Tiền nhà", note = "Daily Spending", inOut = false),
-                Category(name = "Tiền điện", note = "Daily Spending", inOut = false),
-                Category(name = "Tiền nước", note = "Daily Spending", inOut = false),
-                Category(name = "Tiền điện thoại", note = "Daily Spending", inOut = false),
-                Category(name = "Tiền ăn", note = "Daily Spending", inOut = false),
-                Category(name = "Tiền đi chợ", note = "Daily Spending", inOut = false),
+                // Danh mục con
+
+                Category(name = "Tiền nhà", note = "Rent", inOut = false, idparent = 2),
+                Category(name = "Tiền điện", note = "Electricity", inOut = false, idparent = 2),
+                Category(name = "Tiền nước", note = "Water", inOut = false, idparent = 2),
+                Category(name = "Tiền điện thoại", note = "Daily Spending", inOut = false, idparent =2),
+                Category(name = "Tiền ăn", note = "Daily Spending", inOut = false, idparent = 2),
+                Category(name = "Tiền đi chợ", note = "Daily Spending", inOut = false, idparent = 2),
             )
         }
     }

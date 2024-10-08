@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import com.map.nguyen_ha_my.bt2.Adapter.TransactionAdapter
 import com.map.nguyen_ha_my.bt2.DAO.CategoryDAO
 import com.map.nguyen_ha_my.bt2.DAO.TransactionDAO
@@ -49,8 +50,8 @@ class HomeAct : AppCompatActivity() {
         textDate.text = dateFormat.format(currentDate)
 
         //khoitaoDao
-        transactionDAO = AppDatabase.getDatabase(applicationContext).transactionDAO()
-        categoryDAO = AppDatabase.getDatabase(applicationContext).categoryDAO()
+        transactionDAO = AppDatabase.getDatabase(this@HomeAct, lifecycleScope).transactionDAO()
+        categoryDAO = AppDatabase.getDatabase(this@HomeAct, lifecycleScope).categoryDAO()
 
         //doi sang Date cua sql
         val sqlDate = Date(currentDate.time)
